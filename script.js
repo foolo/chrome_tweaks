@@ -1,6 +1,7 @@
-const CONTEXT_MENU_ID = "MY_CONTEXT_MENU";
+const SPANISH_MENU_ID = "SPANISH_MENU_ID";
+
 function getword(info,tab) {
-  if (info.menuItemId !== CONTEXT_MENU_ID) {
+  if (info.menuItemId !== SPANISH_MENU_ID) {
     return;
   }
   console.log("Word " + info.selectionText + " was clicked.");
@@ -8,11 +9,13 @@ function getword(info,tab) {
     url: "https://en.wiktionary.org/wiki/" + info.selectionText + "#Spanish"
   });
 }
+
 chrome.contextMenus.create({
   title: "SPANISH: %s",
   contexts:["selection"], 
-  id: CONTEXT_MENU_ID
+  id: SPANISH_MENU_ID
 });
+
 chrome.contextMenus.onClicked.addListener(getword)
 
 // https://stackoverflow.com/questions/13783500/context-menus-in-chrome-extensions

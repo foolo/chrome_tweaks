@@ -1,0 +1,11 @@
+{
+    "manifest_version": 2,
+    "name": "Translation context menu",
+    "version": "1.0",
+    "permissions": [
+      "contextMenus"
+     ],
+    "background": { 
+      "scripts": ["script.js"]
+    }
+}

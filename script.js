@@ -5,11 +5,11 @@ function getword(info,tab) {
   }
   console.log("Word " + info.selectionText + " was clicked.");
   chrome.tabs.create({  
-    url: "http://www.google.com/search?q=" + info.selectionText
+    url: "https://en.wiktionary.org/wiki/" + info.selectionText + "#Spanish"
   });
 }
 chrome.contextMenus.create({
-  title: "Search: %s", 
+  title: "SPANISH: %s",
   contexts:["selection"], 
   id: CONTEXT_MENU_ID
 });

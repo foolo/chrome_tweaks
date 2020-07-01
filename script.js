@@ -4,8 +4,16 @@ function getword(info,tab) {
 	if (info.menuItemId !== SPANISH_MENU_ID) {
 		return;
 	}
-	chrome.tabs.create({
-		url: "https://en.wiktionary.org/wiki/" + info.selectionText + "#Spanish"
+	let url = "https://en.wiktionary.org/wiki/" + info.selectionText + "#Spanish";
+
+	chrome.tabs.query({"url": "https://en.wiktionary.org/*"}, function(tabs) {
+		if (tabs.length == 0) {
+			chrome.tabs.create({"url": url});
+		}
+		else {
+			let tab = tabs[0];
+			chrome.tabs.executeScript(tab.id, {"code": "window.location.href = '" + url + "';"})
+		}
 	});
 }
 

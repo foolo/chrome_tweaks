@@ -3,7 +3,7 @@
     "name": "Translation context menu",
     "version": "1.0",
     "permissions": [
-      "contextMenus"
+      "contextMenus", "tabs", "https://en.wiktionary.org/"
      ],
     "background": { 
       "scripts": ["script.js"]

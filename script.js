@@ -4,7 +4,7 @@ function getword(info,tab) {
 	if (info.menuItemId !== SPANISH_MENU_ID) {
 		return;
 	}
-	let url = "https://en.wiktionary.org/wiki/" + info.selectionText + "#Spanish";
+	let url = "https://en.wiktionary.org/wiki/" + info.selectionText.toLowerCase() + "#Spanish";
 
 	chrome.tabs.query({"url": "https://en.wiktionary.org/*"}, function(tabs) {
 		if (tabs.length == 0) {
